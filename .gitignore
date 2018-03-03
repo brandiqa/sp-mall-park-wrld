@@ -41,7 +41,8 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
-.cache
 
-# Proejct Credentials
+# Misc
 env.js
+.cache
+dist
