@@ -33,6 +33,8 @@ window.addEventListener('load', async () => {
     if (event.indoorMap.getIndoorMapId() === overgateId) {
       map.indoors.setFloor(0);
       map.setView([56.458968, -2.973841], 18);
+      /* eslint-disable no-unused-vars */
+      const indoorControl = new WrldIndoorControl('widget-container', map);
     }
   });
 });
