@@ -16,6 +16,7 @@ body {
 }
  #floorButtons {
   position: absolute;
+  right: 5px;
   z-index: 20;
 }
 
