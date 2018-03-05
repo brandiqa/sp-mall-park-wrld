@@ -9,10 +9,12 @@
   <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="https://cdn-webgl.wrld3d.com/wrldjs/addons/indoor_control/latest/indoor_control.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.min.js"></script>
   <title>Shopping Mall</title>
 </head>
 <body>
   <div id="widget-container" class="wrld-widget-container"></div>
+
   <div id="floorButtons">
     <button id="mallBtn">Enter Mall</button>
     <button id="topBtn">Top Floor</button>
@@ -21,7 +23,15 @@
     <button id="bottomBtn">Bottom Floor</button>
     <button id="exitBtn">Exit Building</button>
   </div>
+
+  <script id="cardStoreTemplate" type="text/x-jsrender">
+    <div class="card">
+      <h1>{{:title}}</h1>
+    </div>
+  </script>
+
   <div id="map"></div>
+
   <script src="app.js"></script>
 </body>
 </html>

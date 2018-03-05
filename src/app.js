@@ -45,8 +45,14 @@ window.addEventListener('load', async () => {
         closeOnClick: true,
       };
 
+      const template = $.templates('#cardStoreTemplate');
+      const data = {
+        title: 'J.D. Sports',
+      };
+      const htmlOutput = template.render(data);
+
       const popup = Wrld.popup(popupOptions)
-        .setContent(buildingName);
+        .setContent(htmlOutput);
 
       marker.bindPopup(popup);
     }
