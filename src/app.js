@@ -30,12 +30,25 @@ window.addEventListener('load', async () => {
       const indoorControl = new WrldIndoorControl('widget-container', map);
 
       const buildingName = event.indoorMap.getIndoorMapName();
+      const latLng = [56.4593862, -2.9742504];
 
       const marker = Wrld.marker([56.4593862, -2.9742504], {
         title: 'JD Sports',
         indoorMapId,
         indoorMapFloorId: 1,
       }).addTo(map);
+
+      const popupOptions = {
+        indoorMapId,
+        indoorMapFloorIndex: 0,
+        autoClose: false,
+        closeOnClick: true,
+      };
+
+      const popup = Wrld.popup(popupOptions)
+        .setContent(buildingName);
+
+      marker.bindPopup(popup);
     }
   });
 });
