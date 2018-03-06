@@ -10,10 +10,12 @@ const message = document.getElementById('message');
 module.exports = {
   getPOIs: async () => {
     try {
-      const pois = await client.get('/pois');
-      return pois;
+      const response = await client.get('/pois');
+      return response.data;
     } catch (error) {
-      message.innerHTML = `An error occurred: ${error}`;
+      if (message) {
+        message.innerHTML = `An error occurred: ${error}`;
+      }
     }
     return [];
   },
