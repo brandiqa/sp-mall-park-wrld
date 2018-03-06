@@ -33,6 +33,10 @@ If you would like to have ESLint enabled for your IDE(am using VSCode), you'll n
 Once everything is setup, you can run your project like this from the terminal:
 
 ```bash
+# Start the JSON dummy api first
+json-server --watch data/db.json
+
+# In another terminal, launch the app
 parcel src/index.html
 ```
 
