@@ -10,6 +10,7 @@
   "author": "Michael Wanyoike",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.18.0",
     "wrld.js": "^0.1.1528"
   },
   "devDependencies": {

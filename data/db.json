@@ -1,0 +1,182 @@
+{
+  "pois": [
+    {
+      "id":1,
+      "title": "JD Sports",
+      "lat": 56.4593425,
+      "long": -2.9741433,
+      "floor_id": 0,
+      "image_url": "https://cdn-03.belfasttelegraph.co.uk/business/news/article35250062.ece/a66e9/AUTOCROP/w620h342/PANews%20BT_P-8c0568fa-acb7-4ba0-9d57-d0696200c799_I1.jpg",
+      "description":"Retail chain specialising in designer branded training shoes, casual sportswear and accessories.",
+      "phone": "+44 138 221 4545",
+      "email": "customercare@jdsports.co.uk",
+      "web": "https://www.jdsports.co.uk/",
+      "twitter": "@jdhelpteam",
+      "tags": "sports shopping",
+      "open_time":[
+        { "day": "Mon",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Tue",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Wed",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Thur",
+          "time": "9:00am - 7:30pm"
+        },
+        {
+          "day": "Fri",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sat",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sun",
+          "time": "11:00am - 5:30pm"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Next",
+      "lat": 56.4590799,
+      "long": -2.9734832,
+      "floor_id": 0,
+      "image_url": "https://lh5.googleusercontent.com/p/AF1QipMNCQVJlsjq56-fXZiazy74ijeTL_bsJqPX0aJy=w408-h229-k-no",
+      "description": "Clothes retailer for women and men's fashion",
+      "phone": "+44 333 005 5308",
+      "email": "",
+      "web": "next.co.uk",
+      "address": "Next, Desford Road, Enderby, Leicester, LE194AT0",
+      "twitter": "@nextofficial",
+      "tags": "fashion_women fashion_men shopping",
+      "open_time": [
+        {
+          "day": "Mon",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Tue",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Wed",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Thur",
+          "time": "9:00am - 7:30pm"
+        },
+        {
+          "day": "Fri",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sat",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sun",
+          "time": "11:00am - 5:30pm"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "H & M",
+      "lat": 56.4590175,
+      "long": -2.9738649,
+      "floor_id": 0,
+      "image_url": "http://www.trbimg.com/img-57db4f60/turbine/ct-ecn-west-dundee-spring-hill-hm-st-0916-20160915",
+      "description": "Chain retailer supplying on-trend clothing, swimwear, accessories & shoes.",
+      "phone": "+44 344 736 9000",
+      "email": "",
+      "web": "hm.com",
+      "address": "",
+      "twitter": "@hm_custserv",
+      "tags": "fashion_women fashion_men shopping",
+      "open_time": [
+        {
+          "day": "Mon",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Tue",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Wed",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Thur",
+          "time": "9:00am - 7:30pm"
+        },
+        {
+          "day": "Fri",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sat",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sun",
+          "time": "11:00am - 5:30pm"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Debenhams",
+      "lat": 56.4590953,
+      "long": -2.9742838,
+      "floor_id": 0,
+      "image_url": "https://www.e-architect.co.uk/wp-content/uploads/2016/01/dundee-building-a260116-aw2.jpg",
+      "description": "Department store chain selling own-brand and international fashion, beauty and homeware products.",
+      "phone": "+44 344 561 6161",
+      "email": "",
+      "web": "",
+      "address": "",
+      "twitter": "",
+      "tags": "shopping",
+      "open_time": [
+        {
+          "day": "Mon",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Tue",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Wed",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Thur",
+          "time": "9:00am - 7:30pm"
+        },
+        {
+          "day": "Fri",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sat",
+          "time": "9:00am - 6:00pm"
+        },
+        {
+          "day": "Sun",
+          "time": "11:00am - 5:30pm"
+        }
+      ]
+    }
+  ]
+}

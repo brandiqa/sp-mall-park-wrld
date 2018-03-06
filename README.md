@@ -8,10 +8,10 @@ You need a reliable Internet connection for the app to work. Clone the project f
 npm install
 ```
 
-Next, install [Parcel Bundler](https://parceljs.org)
+Next, install [Parcel Bundler](https://parceljs.org) and [json-server](https://github.com/typicode/json-server) globally:
 
 ```bash
-npm install -g parcel-bundler
+npm install -g parcel-bundler json-server
 ```
 
 While it's installing, you need to create a new account at [https://www.wrld3d.com/](https://www.wrld3d.com/). Next, create an Access API key [here](https://mapdesigner.wrld3d.com/portal/latest/dev/). You will also need a [developer token](https://accounts.wrld3d.com/users/edit#developer-token); Once you aquired both, make a copy of `env.example.js` file and save it as `env.js`.
