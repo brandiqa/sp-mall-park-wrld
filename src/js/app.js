@@ -1,5 +1,5 @@
 const Wrld = require('wrld.js');
-const env = require('../env');
+const env = require('../../env');
 const { initFloors } = require('./floors');
 const { getPOIs } = require('./poi');
 
