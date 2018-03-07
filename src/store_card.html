@@ -2,82 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=318px, initial-scale=1">
+  <!-- <meta name="viewport" content="width=318, initial-scale=1"> -->
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="./poi.css" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
   <title>Overgate Mall Store</title>
 </head>
 <body>
   <div class="main-wrapper">
-    <div class="ui segment">
-      <div class="ui card">
-        <div class="image">
-          <img src="https://cdn-03.belfasttelegraph.co.uk/business/news/article35250062.ece/a66e9/AUTOCROP/w620h342/PANews%20BT_P-8c0568fa-acb7-4ba0-9d57-d0696200c799_I1.jpg">
-        </div>
-        <div class="content">
-          <div class="header">JD Sports</div>
-          <div class="description">
-             Retail chain specializing in designer brander training shoes, casual sportswear and accessories.
+    <div class="ui compact basic segment">
+      <div class="ui menu tabular">
+        <a class="active item" data-tab="info">
+          <i class="info circle icon"></i> Info</a>
+        <a class="item" data-tab="time">
+          <i class="clock icon"></i> Opening Hours</a>
+      </div>
+      <div class="ui tab active" data-tab="info">
+        <div class="ui card">
+          <div class="image">
+            <img src="https://cdn-03.belfasttelegraph.co.uk/business/news/article35250062.ece/a66e9/AUTOCROP/w620h342/PANews%20BT_P-8c0568fa-acb7-4ba0-9d57-d0696200c799_I1.jpg">
+          </div>
+          <div class="content">
+            <div class="header">JD Sports</div>
+            <div class="description">
+              Retail chain specializing in training shoes, sportswear &amp; accessories.
+            </div>
+          </div>
+          <div class="extra content contacts">
+            <span>
+              <i class="globe icon"></i>
+              <a href="http://www.jdsports.co.uk">www.jdsports.co.uk</a>
+            </span>
+            <span>
+              <i class="mail icon"></i>
+              customercare@jdsports.co.uk
+            </span>
+            <span>
+              <i class="phone icon"></i>
+              +441382214545
+            </span>
+            <span>
+              <i class="time icon"></i>
+              Open
+            </span>
           </div>
         </div>
-        <div class="extra content contacts">
-          <span>
-            <i class="globe icon"></i>
-            <a href="http://www.jdsports.co.uk">www.jdsports.co.uk</a>
-          </span>
-          <span>
-            <i class="mail icon"></i>
-            customercare@jdsports.co.uk
-          </span>
-          <span>
-            <i class="phone icon"></i>
-            +441382214545
-          </span>
-          <span>
-            <i class="time icon"></i>
-            Open
-          </span>
-          <table class="ui celled table">
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mon</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Tue</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Wed</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Thur</td>
-                <td>9:00am - 7:30pm</td>
-              </tr>
-              <tr>
-                <td>Fri</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Sat</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Sun</td>
-                <td>11:00am - 5:00pm</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+      </div>
+      <div class="ui tab" data-tab="time">
+        <h4>J.D. Sports</h4>
+        <table class="ui celled table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Mon</td>
+              <td>9:00am - 6:00pm</td>
+            </tr>
+            <tr>
+              <td>Tue</td>
+              <td>9:00am - 6:00pm</td>
+            </tr>
+            <tr>
+              <td>Wed</td>
+              <td>9:00am - 6:00pm</td>
+            </tr>
+            <tr>
+              <td>Thur</td>
+              <td>9:00am - 7:30pm</td>
+            </tr>
+            <tr>
+              <td>Fri</td>
+              <td>9:00am - 6:00pm</td>
+            </tr>
+            <tr>
+              <td>Sat</td>
+              <td>9:00am - 6:00pm</td>
+            </tr>
+            <tr>
+              <td>Sun</td>
+              <td>11:00am - 5:00pm</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
+  <script>
+    $('.tabular.menu .item').tab();
+  </script>
 </body>
 </html>

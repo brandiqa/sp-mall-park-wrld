@@ -11,6 +11,7 @@
   <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="https://cdn-webgl.wrld3d.com/wrldjs/addons/indoor_control/latest/indoor_control.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
   <title>Shopping Mall</title>
 </head>
 <body style="position: relative">
@@ -27,80 +28,91 @@
 
   <script id="cardStoreTemplate" type="text/x-jsrender">
     <div class="main-wrapper">
-    <div class="ui segment">
-      <div class="ui card">
-        <div class="image">
-          <img src={{:image_url}}>
+      <div class="ui compact basic segment">
+        <div class="ui menu tabular">
+          <a class="active item" data-tab="info"><i class="info circle icon"></i> Info</a>
+          <a class="item" data-tab="time"> <i class="clock icon"></i> Opening Hours</a>
         </div>
-        <div class="content">
-          <div class="header">{{:title}}</div>
-          <div class="description">
-             {{:description}}
+        <div class="ui tab active" data-tab="info">
+          <div class="ui card">
+            <div class="image">
+              <img src={{:image_url}}>
+            </div>
+            <div class="content">
+              <div class="header">{{:title}}</div>
+              <div class="description">
+                {{:description}}
+              </div>
+            </div>
+            <div class="extra content contacts">
+              <span>
+                <i class="globe icon"></i>
+                <a href="{{:web}}">{{:web}}</a>
+              </span>
+              <span>
+                <i class="mail icon"></i>
+                {{:email}}
+              </span>
+              <span>
+                <i class="phone icon"></i>
+                {{:phone}}
+              </span>
+              <span>
+                <i class="time icon"></i>
+                Open Hours
+              </span>
+            </div>
           </div>
         </div>
-        <div class="extra content contacts">
-          <span>
-            <i class="globe icon"></i>
-            <a href="{{:web}}">{{:web}}</a>
-          </span>
-          <span>
-            <i class="mail icon"></i>
-            {{:email}}
-          </span>
-          <span>
-            <i class="phone icon"></i>
-            {{:phone}}
-          </span>
-          <span>
-            <i class="time icon"></i>
-            Open Hours
-          </span>
+        <div class="ui tab" data-tab="time">
           <table class="ui celled table">
-            <thead>
-              <tr>
-                <th>Day</th>
-                <th>Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Mon</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Tue</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Wed</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Thur</td>
-                <td>9:00am - 7:30pm</td>
-              </tr>
-              <tr>
-                <td>Fri</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Sat</td>
-                <td>9:00am - 6:00pm</td>
-              </tr>
-              <tr>
-                <td>Sun</td>
-                <td>11:00am - 5:00pm</td>
-              </tr>
-            </tbody>
-          </table>
+              <thead>
+                <tr>
+                  <th>Day</th>
+                  <th>Time</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Mon</td>
+                  <td>9:00am - 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Tue</td>
+                  <td>9:00am - 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Wed</td>
+                  <td>9:00am - 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Thur</td>
+                  <td>9:00am - 7:30pm</td>
+                </tr>
+                <tr>
+                  <td>Fri</td>
+                  <td>9:00am - 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Sat</td>
+                  <td>9:00am - 6:00pm</td>
+                </tr>
+                <tr>
+                  <td>Sun</td>
+                  <td>11:00am - 5:00pm</td>
+                </tr>
+              </tbody>
+            </table>
         </div>
       </div>
     </div>
-  </div>
   </script>
 
   <div id="map" ></div>
 
   <script src="app.js"></script>
+  <script>
+    $('.tabular.menu .item').tab();
+  </script>
 </body>
 </html>

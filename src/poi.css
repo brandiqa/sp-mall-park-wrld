@@ -2,13 +2,10 @@
 
 /* -------- POI VIEW -------- */
 
-.main-wrapper {
-	/* width: 335px; */
-	width: 334px;
-	background-color: rgba(255,255,255,1.00);
-	height: 480px;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
+
+.main-wrapper > .segment {
+  padding: 0px;
+  max-width: 100px !important;
 }
 
 .contacts > span {
