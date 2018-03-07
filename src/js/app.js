@@ -54,7 +54,8 @@ window.addEventListener('load', async () => {
       map.indoors.setFloor(0);
       map.setView([56.458968, -2.973841], 18);
 
-      initFloors(map, indoorMapId);
+      // Set up Floor buttons
+      initFloors(map);
 
       /* eslint-disable no-unused-vars */
       const indoorControl = new WrldIndoorControl('widget-container', map);

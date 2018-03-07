@@ -1,15 +1,10 @@
 module.exports = {
-  initFloors: (map, indoorMapId) => {
-    const mallBtn = document.getElementById('mallBtn');
+  initFloors: (map) => {
     const exitBtn = document.getElementById('exitBtn');
     const topBtn = document.getElementById('topBtn');
     const upBtn = document.getElementById('upBtn');
     const downBtn = document.getElementById('downBtn');
     const bottomBtn = document.getElementById('bottomBtn');
-
-    mallBtn.addEventListener('click', () => {
-      map.indoors.enter(indoorMapId);
-    });
 
     exitBtn.addEventListener('click', () => {
       map.indoors.exit();
