@@ -4,7 +4,8 @@
   "description": "Mall Map tutorial using WRLD",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "api": "json-server --watch data/db.json",
+    "start": "parcel src/index.html"
   },
   "keywords": [],
   "author": "Michael Wanyoike",
