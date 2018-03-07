@@ -57,12 +57,6 @@ window.addEventListener('load', async () => {
       // Set up Floor buttons
       initFloors(map);
 
-      /* eslint-disable no-unused-vars */
-      const indoorControl = new WrldIndoorControl('widget-container', map);
-
-      const buildingName = event.indoorMap.getIndoorMapName();
-      const latLng = [56.4593862, -2.9742504];
-
       const pois = await getPOIs();
       placeMarkers(pois);
     }
