@@ -34,13 +34,11 @@ parcel src/index.html
 Use your favorite browser and open the link `127.0.0.1:1234`. Wait for the indoor map to load, shouldn't take more than a minute.
 
 ## ESLint Configuration(Optional)
-If you would like to have ESLint enabled for your IDE(am using VSCode), you'll need to install the following packages globally listed in `packages.json:
+If you would like to have ESLint enabled for your IDE(am using VSCode), you'll need to install the following packages globally:
 
 ```json
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-plugin-transform-runtime": "^6.23.0",
-    "babel-runtime": "^6.26.0",
+    "eslint": "^4.18.2",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0"
   }
