@@ -14,7 +14,7 @@ const template = $.templates('#cardStoreTemplate');
 const popupOptions = {
   indoorMapId,
   indoorMapFloorIndex: 0,
-  autoClose: false,
+  autoClose: true,
   closeOnClick: true,
 };
 
@@ -35,7 +35,8 @@ window.addEventListener('load', async () => {
     /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
     for (let i = 0; i < pois.length; i++) {
       poi = pois[i];
-      marker = Wrld.marker([poi.lat, poi.long], {
+      const latlang = [poi.lat, poi.long];
+      marker = Wrld.marker(latlang, {
         title: poi.title,
         indoorMapId,
         indoorMapFloorId: 1,
@@ -46,13 +47,16 @@ window.addEventListener('load', async () => {
       const popup = Wrld.popup(popupOptions)
         .setContent(htmlOutput);
       marker.bindPopup(popup);
+      marker.on('popupopen', (event) => {
+        map.setView(latlang, 18);
+      });
     }
   };
 
   map.indoors.on('indoormapenter', async (event) => {
     if (event.indoorMap.getIndoorMapId() === indoorMapId) {
       map.indoors.setFloor(0);
-      map.setView([56.458968, -2.973841], 18);
+      map.setView([56.459342, -2.9741433], 18);
 
       // Set up Floor buttons
       initFloors(map);
