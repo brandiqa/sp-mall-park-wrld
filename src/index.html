@@ -30,10 +30,10 @@
     <div class="main-wrapper">
       <div class="ui compact basic segment">
         <div class="ui menu tabular">
-          <a class="active item" data-tab="info"><i class="info circle icon"></i> Info</a>
-          <a class="item" data-tab="time"> <i class="clock icon"></i> Opening Hours</a>
+          <a id="infoMenu" class="active item" data-tab="info"><i class="info circle icon"></i> Info</a>
+          <a id="timeMenu" class="item" data-tab="time"> <i class="clock icon"></i> Opening Hours</a>
         </div>
-        <div class="ui tab active" data-tab="info">
+        <div id="infoTab" class="ui tab active" data-tab="info">
           <div class="ui card">
             <div class="image">
               <img src={{:image_url}}>
@@ -57,14 +57,10 @@
                 <i class="phone icon"></i>
                 {{:phone}}
               </span>
-              <span>
-                <i class="time icon"></i>
-                Open Hours
-              </span>
             </div>
           </div>
         </div>
-        <div class="ui tab" data-tab="time">
+        <div id="timeTab" class="ui tab" data-tab="time">
           <table class="ui celled table">
               <thead>
                 <tr>
@@ -73,34 +69,12 @@
                 </tr>
               </thead>
               <tbody>
+                {{for open_time}}
                 <tr>
-                  <td>Mon</td>
-                  <td>9:00am - 6:00pm</td>
+                  <td>{{:day}}</td>
+                  <td>{{:time}}</td>
                 </tr>
-                <tr>
-                  <td>Tue</td>
-                  <td>9:00am - 6:00pm</td>
-                </tr>
-                <tr>
-                  <td>Wed</td>
-                  <td>9:00am - 6:00pm</td>
-                </tr>
-                <tr>
-                  <td>Thur</td>
-                  <td>9:00am - 7:30pm</td>
-                </tr>
-                <tr>
-                  <td>Fri</td>
-                  <td>9:00am - 6:00pm</td>
-                </tr>
-                <tr>
-                  <td>Sat</td>
-                  <td>9:00am - 6:00pm</td>
-                </tr>
-                <tr>
-                  <td>Sun</td>
-                  <td>11:00am - 5:00pm</td>
-                </tr>
+                {{/for}}
               </tbody>
             </table>
         </div>
