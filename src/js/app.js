@@ -47,7 +47,7 @@ window.addEventListener('load', async () => {
       const popup = Wrld.popup(popupOptions)
         .setContent(htmlOutput);
       marker.bindPopup(popup);
-      marker.on('popupopen', (event) => {
+      marker.on('popupopen', () => {
         map.setView(latlang, 18);
       });
     }
