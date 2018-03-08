@@ -14,10 +14,10 @@ Next, install [Parcel Bundler](https://parceljs.org) and [json-server](https://g
 npm install -g parcel-bundler json-server
 ```
 
-While it's installing, you need to create a new account at [https://www.wrld3d.com/](https://www.wrld3d.com/). Next, create an Access API key [here](https://mapdesigner.wrld3d.com/portal/latest/dev/). You will also need a [developer token](https://accounts.wrld3d.com/users/edit#developer-token); Once you aquired both, make a copy of `env.example.js` file and save it as `env.js`.
+While it's installing, you need to create a new account at [https://www.wrld3d.com/](https://www.wrld3d.com/). Next, create an Access API key [here](https://mapdesigner.wrld3d.com/portal/latest/dev/). You will also need a [developer token](https://accounts.wrld3d.com/users/edit#developer-token). Once you aquired both, make a copy of `env.example.js` file and save it as `env.js`. Paste in your API key and developer token.
 
 ## How to run
-Once everything is setup, you can run your project like this from the terminal:
+This project uses a dummy api to provide data for the markers that will be placed in the indoor map. The source of the data can be found in `data/db.json`. Once everything is setup, you can run your project like this from the terminal:
 
 ```bash
 # Start the JSON dummy api first
