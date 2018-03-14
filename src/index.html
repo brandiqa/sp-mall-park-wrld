@@ -24,11 +24,8 @@
   <script id="cardStoreTemplate" type="text/x-jsrender">
     <div class="main-wrapper">
       <div class="ui compact basic segment">
-        <div class="ui menu tabular">
-          <a id="infoMenu" class="active item" data-tab="info"><i class="info circle icon"></i> Info</a>
-          <a id="timeMenu" class="item" data-tab="time"> <i class="clock icon"></i> Opening Hours</a>
-        </div>
-        <div id="infoTab" class="ui tab active" data-tab="info">
+        <div class="ui menu tabular"></div>
+        <div id="infoTab" class="ui tab active" data-tab="Info">
           <div class="ui card">
             <div class="image">
               <img src={{:image_url}}>
@@ -55,7 +52,7 @@
             </div>
           </div>
         </div>
-        <div id="timeTab" class="ui tab" data-tab="time">
+        <div id="timeTab" class="ui tab" data-tab="Time">
           <table class="ui celled table">
               <thead>
                 <tr>
@@ -80,8 +77,5 @@
   <div id="map" ></div>
 
   <script src="js/app.js"></script>
-  <script>
-    $('.tabular.menu .item').tab();
-  </script>
 </body>
 </html>

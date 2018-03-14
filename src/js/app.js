@@ -29,6 +29,35 @@ window.addEventListener('load', async () => {
     map.indoors.enter(indoorMapId);
   });
 
+  const createMenuLink = (linkName, iconClass) => {
+    const link = document.createElement('a');
+    link.className = 'item';
+    const icon = document.createElement('i');
+    icon.className = `${iconClass} icon`;
+    link.appendChild(icon);
+    link.appendChild(document.createTextNode(` ${linkName}`));
+    link.setAttribute('data-tab', linkName);
+    return link;
+  };
+
+  const clickHandler = (tabName) => {
+    $.tab('change tab', tabName);
+  };
+
+  const createMenu = (menuParent) => {
+    const infoLink = createMenuLink('Info', 'info circle');
+    infoLink.className += ' active';
+    menuParent.appendChild(infoLink);
+    infoLink.addEventListener('click', () => {
+      clickHandler('Info');
+    });
+    const timeLink = createMenuLink('Time', 'clock');
+    menuParent.appendChild(timeLink);
+    timeLink.addEventListener('click', () => {
+      clickHandler('Time');
+    });
+  };
+
   const placeMarkers = (pois) => {
     let marker;
     let poi;
@@ -43,9 +72,15 @@ window.addEventListener('load', async () => {
       }).addTo(map);
       // Render poi data to jsrender template
       const htmlOutput = template.render(poi);
+      // Convert to DOM object
+      const tabsDOM = $.parseHTML(htmlOutput)[1];
+      // Build tabs menu
+      const menuParent = tabsDOM.childNodes[1].childNodes[1];
+      createMenu(menuParent);
+
       // Create and bind popup to marker
       const popup = Wrld.popup(popupOptions)
-        .setContent(htmlOutput);
+        .setContent(tabsDOM);
       marker.bindPopup(popup);
       marker.on('popupopen', () => {
         map.setView(latlang, 18);
