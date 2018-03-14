@@ -5,6 +5,7 @@
 
 .main-wrapper > .segment {
   padding: 0px;
+  width: 300px;
 }
 
 .contacts > span {
