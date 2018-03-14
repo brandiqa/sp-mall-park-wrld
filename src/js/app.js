@@ -1,7 +1,7 @@
 const Wrld = require('wrld.js');
 const env = require('../../env');
-const { initFloors } = require('./floors');
-const { getPOIs } = require('./poi');
+const { floorControls } = require('./floor-controls');
+const { getPOIs } = require('./poi-service');
 
 const keys = {
   wrld: env.WRLD_KEY,
@@ -93,8 +93,8 @@ window.addEventListener('load', async () => {
       map.indoors.setFloor(0);
       map.setView([56.459342, -2.9741433], 18);
 
-      // Set up Floor buttons
-      initFloors(map);
+      // Set up Floor Control buttons
+      floorControls(map);
 
       const pois = await getPOIs();
       placeMarkers(pois);

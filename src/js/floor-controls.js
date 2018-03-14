@@ -1,5 +1,5 @@
 module.exports = {
-  initFloors: (map) => {
+  floorControls: (map) => {
     const exitBtn = document.getElementById('exitBtn');
     const topBtn = document.getElementById('topBtn');
     const upBtn = document.getElementById('upBtn');
