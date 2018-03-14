@@ -19,4 +19,15 @@ module.exports = {
     }
     return [];
   },
+  getPOI: async (id) => {
+    try {
+      const response = await client.get(`/pois/${id}`);
+      return response.data;
+    } catch (error) {
+      if (message) {
+        message.innerHTML = `An error occurred: ${error}`;
+      }
+    }
+    return {};
+  },
 };
