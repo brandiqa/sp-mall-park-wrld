@@ -40,7 +40,6 @@ window.addEventListener('load', async () => {
     link.appendChild(icon);
     link.appendChild(document.createTextNode(` ${linkName}`));
     link.setAttribute('data-tab', linkName);
-    // link.setId('id', `${linkName}Menu`);
     link.addEventListener('click', () => {
       $.tab('change tab', linkName);
       $('.item').toggleClass('active');

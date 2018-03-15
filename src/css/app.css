@@ -1,5 +1,6 @@
 @import "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.1/leaflet.css";
 @import "https://cdn-webgl.wrld3d.com/wrldjs/addons/resources/latest/css/wrld.css";
+@import "https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.css";
 
 html,
 body {
@@ -14,6 +15,8 @@ body {
   height: 100%;
   background-color: #000000;
 }
+/* -------- FLOOR CONTROLS -------- */
+
  #floorButtons {
   position: absolute;
   right: 5px;
@@ -23,4 +26,16 @@ body {
 #floorButtons button {
   display: block;
   width: 100%;
+}
+
+/* -------- POPUP CONTENT -------- */
+
+.main-wrapper > .segment {
+  padding: 0px;
+  width: 300px;
+}
+
+.contacts > span {
+  display: block;
+  padding-top: 5px;
 }
