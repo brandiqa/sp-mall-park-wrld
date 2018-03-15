@@ -1,24 +1,13 @@
 const Wrld = require('wrld.js');
 const env = require('../../env');
 const { floorControls } = require('./floor-controls');
-const { getPOIs, getPOI } = require('./poi-service');
+const { getPOIs } = require('./poi-service');
+const { showPopup } = require('./popup-service');
 
 const indoorMapId = 'EIM-e16a94b1-f64f-41ed-a3c6-8397d9cfe607';
 
 const keys = {
   wrld: env.WRLD_KEY,
-};
-
-const baseTemplate = $.templates('#baseTemplate');
-const infoTemplate = $.templates('#infoTemplate');
-const timeTemplate = $.templates('#timeTemplate');
-
-const popupOptions = {
-  indoorMapId,
-  indoorMapFloorIndex: 0,
-  autoClose: true,
-  closeOnClick: true,
-  elevatiion: 10,
 };
 
 window.addEventListener('load', async () => {
@@ -31,78 +20,6 @@ window.addEventListener('load', async () => {
   map.on('initialstreamingcomplete', () => {
     map.indoors.enter(indoorMapId);
   });
-
-  const createMenuLink = (linkName, iconClass) => {
-    const link = document.createElement('a');
-    link.className = 'item';
-    const icon = document.createElement('i');
-    icon.className = `${iconClass} icon`;
-    link.appendChild(icon);
-    link.appendChild(document.createTextNode(` ${linkName}`));
-    link.setAttribute('data-tab', linkName);
-    link.addEventListener('click', () => {
-      $.tab('change tab', linkName);
-      $('.item').toggleClass('active');
-    });
-    return link;
-  };
-
-  const createMenu = (menuParent) => {
-    const infoLink = createMenuLink('Info', 'info circle');
-    infoLink.className += ' active';
-    menuParent.appendChild(infoLink);
-    const timeLink = createMenuLink('Time', 'clock');
-    menuParent.appendChild(timeLink);
-  };
-
-  const buildBaseContent = () => {
-    const htmlOutput = baseTemplate.render({});
-    const parent = $.parseHTML(htmlOutput)[1];
-    const menuParent = parent.childNodes[1].childNodes[1];
-    createMenu(menuParent);
-    return parent;
-  };
-
-  const baseContent = buildBaseContent();
-
-  const clearTab = (tab) => {
-    while (tab.firstChild) {
-      tab.removeChild(tab.firstChild);
-    }
-  };
-
-  const showPopup = async (event) => {
-    /* eslint no-underscore-dangle:  [2, { "allow": ["_latlng"] }] */
-    const latlang = event.target._latlng;
-    // let popup;
-    const popup = Wrld.popup(popupOptions)
-      .setLatLng(latlang);
-    try {
-      // Fetch data
-      const poi = await getPOI(event.target.options.id);
-      // Bind data to templates
-      const infoHTML = infoTemplate.render(poi);
-      const timeHTML = timeTemplate.render(poi);
-      // Convert to DOM objects
-      const infoDOM = $.parseHTML(infoHTML)[1];
-      const timeDOM = $.parseHTML(timeHTML)[1];
-      // Populate Tabs
-      const infoTab = baseContent.childNodes[1].childNodes[3];
-      clearTab(infoTab);
-      infoTab.appendChild(infoDOM);
-      const timeTab = baseContent.childNodes[1].childNodes[5];
-      clearTab(timeTab);
-      timeTab.appendChild(timeDOM);
-
-      // Display popup
-      popup.setContent(baseContent);
-      popup.addTo(map);
-      map.setView(latlang, 18);
-    } catch (error) {
-      popup.setContent('Oops! Something went wrong');
-      popup.addTo(map);
-    }
-  };
 
   const placeMarkers = (pois) => {
     let marker;
