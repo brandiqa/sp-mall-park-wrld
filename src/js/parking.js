@@ -8,7 +8,7 @@ const keys = {
 
 window.addEventListener('load', async () => {
   const map = await Wrld.map('map', keys.wrld, {
-    center: [56.460087, -2.975191],
+    center: [56.460087, -2.975432],
     zoom: 17.5,
   });
 
