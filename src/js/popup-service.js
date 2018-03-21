@@ -1,5 +1,5 @@
 const Wrld = require('wrld.js');
-const { getPOI } = require('./poi-service');
+const { getPOI } = require('./api-service');
 
 const indoorMapId = 'EIM-e16a94b1-f64f-41ed-a3c6-8397d9cfe607';
 const baseTemplate = $.templates('#baseTemplate');
