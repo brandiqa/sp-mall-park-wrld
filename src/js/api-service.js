@@ -30,4 +30,15 @@ module.exports = {
     }
     return {};
   },
+  getParkingAreas: async () => {
+    try {
+      const response = await client.get('/parkingAreas');
+      return response.data;
+    } catch (error) {
+      if (message) {
+        message.innerHTML = `An error occurred: ${error}`;
+      }
+    }
+    return [];
+  },
 };
