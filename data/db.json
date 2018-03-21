@@ -181,6 +181,7 @@
   ],
   "parkingAreas": [
     {
+      "id": 1,
       "name" : "parking 1",
       "polygonPoints": [
         [
@@ -208,10 +209,11 @@
           -2.974035
         ]
       ],
-      "totalSlots": 30,
-      "usedSlots": 20
+      "totalSlots": 55,
+      "usedSlots": 55
     },
     {
+      "id": 2,
       "name": "parking 2",
       "polygonPoints": [
         [
@@ -239,10 +241,11 @@
           -2.974633
         ]
       ],
-      "totalSlots": 30,
-      "usedSlots": 20
+      "totalSlots": 75,
+      "usedSlots": 70
     },
     {
+      "id": 3,
       "name": "parking 3",
       "polygonPoints": [
         [
@@ -270,8 +273,8 @@
           -2.975834
         ]
       ],
-      "totalSlots": 30,
-      "usedSlots": 20
+      "totalSlots": 63,
+      "usedSlots": 32
     }
   ]
 }
