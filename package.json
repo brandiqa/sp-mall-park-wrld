@@ -1,5 +1,5 @@
 {
-  "name": "MallMap",
+  "name": "mallmap",
   "version": "1.0.0",
   "description": "Mall Map tutorial using WRLD",
   "main": "index.js",
