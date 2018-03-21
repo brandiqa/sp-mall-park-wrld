@@ -6,6 +6,9 @@ const keys = {
   wrld: env.WRLD_KEY,
 };
 
+const parkPolys = [];
+const updateCycle = 5000; // 5 seconds
+
 // Color Codes
 const fullColor = [255, 0, 0, 128]; // Completely full, 100%
 const almostColor = [255, 165, 0, 128]; // Few parking slots left, 80% full
@@ -32,17 +35,28 @@ window.addEventListener('load', async () => {
     map.setCameraHeadingDegrees(45).setCameraTiltDegrees(0);
   }, 1000);
 
+  const updateParkingAreas = async () => {
+    const parkingAreas = await getParkingAreas();
+    parkingAreas.forEach((parkingArea) => {
+      const parkPoly = parkPolys.find(target => parkingArea.id === target.id);
+      if (parkPoly) {
+        parkPoly.poly.setColor(getColorCode(parkingArea));
+      }
+    });
+    // Repeat every 5 seconds
+    setTimeout(updateParkingAreas, updateCycle);
+  };
+
   map.on('initialstreamingcomplete', async () => {
     // Highlight Parking Areas
     const parkingAreas = await getParkingAreas();
-    const polygons = [];
     parkingAreas.forEach((parkingArea) => {
       const colorCode = getColorCode(parkingArea);
-      const polygon = Wrld.polygon(parkingArea.polygonPoints, {
-        id: parkingArea.id,
-        color: colorCode,
-      }).addTo(map);
-      polygons.push(polygon);
+      const poly = Wrld.polygon(parkingArea.polygonPoints, { color: colorCode })
+        .addTo(map);
+      parkPolys.push({ id: parkingArea.id, poly });
     });
+
+    setTimeout(updateParkingAreas, updateCycle);
   });
 });
