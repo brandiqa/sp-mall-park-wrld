@@ -23,10 +23,7 @@ window.addEventListener('load', async () => {
 
   const placeMarkers = (pois) => {
     let marker;
-    let poi;
-    /* eslint no-plusplus: ["error", { "allowForLoopAfterthoughts": true }] */
-    for (let i = 0; i < pois.length; i++) {
-      poi = pois[i];
+    pois.forEach((poi) => {
       const latlang = [poi.lat, poi.long];
       marker = Wrld.marker(latlang, {
         id: poi.id,
@@ -35,7 +32,7 @@ window.addEventListener('load', async () => {
         indoorMapFloorId: 1,
       }).addTo(map);
       marker.on('click', showPopup);
-    }
+    });
   };
 
   map.indoors.on('indoormapenter', async (event) => {
