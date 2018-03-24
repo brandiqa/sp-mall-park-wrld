@@ -47,6 +47,7 @@ const buildBaseContent = () => {
 
 const baseContent = buildBaseContent();
 
+// Clear existing tab content before adding another
 const clearTab = (tab) => {
   while (tab.firstChild) {
     tab.removeChild(tab.firstChild);
@@ -54,22 +55,24 @@ const clearTab = (tab) => {
 };
 
 module.exports = {
+  /* eslint no-underscore-dangle:  [2, { "allow": ["_latlng", "_map"] }] */
   showPopup: async (event) => {
-    /* eslint no-underscore-dangle:  [2, { "allow": ["_latlng", "_map"] }] */
+    // Fetch co-ordinates and map objects from event
     const latlang = event.target._latlng;
     const map = event.target._map;
+    // Create an instance of Popup
     const popup = Wrld.popup(popupOptions)
       .setLatLng(latlang);
     try {
-      // Fetch data
+      // Fetch data from api-service
       const poi = await getPOI(event.target.options.id);
-      // Bind data to templates
+      // Bind data with templates to render html outputs
       const infoHTML = infoTemplate.render(poi);
       const timeHTML = timeTemplate.render(poi);
-      // Convert to DOM objects
+      // Convert HTML outputs to DOM objects
       const infoDOM = $.parseHTML(infoHTML)[1];
       const timeDOM = $.parseHTML(timeHTML)[1];
-      // Populate Tabs
+      // Populate Tabs with DOM objects
       const infoTab = baseContent.childNodes[1].childNodes[3];
       clearTab(infoTab); // Clear existing content if any
       infoTab.appendChild(infoDOM);
@@ -77,9 +80,11 @@ module.exports = {
       clearTab(timeTab); // Clear existing content if any
       timeTab.appendChild(timeDOM);
 
-      // Display popup
+      // Populate popup with DOM content
       popup.setContent(baseContent);
+      // Display the popup
       popup.addTo(map);
+      // Navigate map to properly view the Popup
       map.setView(latlang, 18);
     } catch (error) {
       popup.setContent('Oops! Something went wrong');
