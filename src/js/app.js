@@ -16,7 +16,8 @@ window.addEventListener('load', async () => {
     indoorsEnabled: true,
   });
 
-  let indoorControl = new WrldIndoorControl('widget-container', map);
+
+  const indoorControl = new WrldIndoorControl('widget-container', map); // eslint-disable-line no-unused-vars
 
   map.on('initialstreamingcomplete', () => {
     map.indoors.enter(indoorMapId);
