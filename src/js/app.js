@@ -1,6 +1,5 @@
 const Wrld = require('wrld.js');
 const env = require('../../env');
-const { floorControls } = require('./floor-controls');
 const { getPOIs } = require('./api-service');
 const { showPopup } = require('./popup-service');
 
@@ -16,6 +15,8 @@ window.addEventListener('load', async () => {
     zoom: 17,
     indoorsEnabled: true,
   });
+
+  let indoorControl = new WrldIndoorControl('widget-container', map);
 
   map.on('initialstreamingcomplete', () => {
     map.indoors.enter(indoorMapId);
@@ -39,9 +40,6 @@ window.addEventListener('load', async () => {
     if (event.indoorMap.getIndoorMapId() === indoorMapId) {
       map.indoors.setFloor(0);
       map.setView([56.459342, -2.9741433], 18);
-
-      // Set up Floor Control buttons
-      floorControls(map);
 
       const pois = await getPOIs();
       placeMarkers(pois);

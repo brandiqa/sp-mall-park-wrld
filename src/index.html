@@ -7,18 +7,20 @@
   <link rel="stylesheet" href="./css/app.css" />
   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
     crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jsrender/0.9.90/jsrender.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.0/semantic.min.js"></script>
+  <script src="https://cdn-webgl.wrld3d.com/wrldjs/addons/indoor_control/latest/indoor_control.js"></script>
   <title>Shopping Mall</title>
 </head>
 <body>
-  <div id="floorButtons">
+  <!-- <div id="floorButtons">
     <button id="topBtn">Top Floor</button>
     <button id="upBtn">Move Up</button>
     <button id="downBtn">Move Down</button>
     <button id="bottomBtn">Bottom Floor</button>
     <button id="exitBtn">Exit Building</button>
-  </div>
+  </div> -->
 
   <script id="baseTemplate" type="text/x-jsrender">
     <div class="main-wrapper">
@@ -77,6 +79,7 @@
     </table>
   </script>
 
+  <div id="widget-container" class="wrld-widget-container"></div>
   <div id="map" ></div>
 
   <script src="js/app.js"></script>
