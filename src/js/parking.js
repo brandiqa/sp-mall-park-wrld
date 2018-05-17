@@ -32,7 +32,7 @@ window.addEventListener('load', async () => {
 
   // Adjust bearing and tilt
   setTimeout(() => {
-    map.setCameraHeadingDegrees(45).setCameraTiltDegrees(0);
+    map.setCameraHeadingDegrees(45).setCameraTiltDegrees(45);
   }, 1000);
 
   const updateParkingAreas = async () => {
