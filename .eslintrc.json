@@ -1,14 +1,15 @@
 {
-    "extends": "airbnb-base",
-    "rules": {
-        "linebreak-style": 0,
-        "no-console": "off"
-    },
-    "env":{
-        "browser": true,
-        "jquery": true
-    },
-    "globals": {
-      "WrldIndoorControl": false
-    }
+  "extends": "airbnb-base",
+  "rules": {
+      "linebreak-style": 0,
+      "no-console": "off"
+  },
+  "env":{
+      "browser": true,
+      "jquery": true
+  },
+  "globals": {
+    "WrldIndoorControl": false,
+    "io": false
+  }
 }

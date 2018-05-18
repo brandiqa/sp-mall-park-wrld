@@ -17,6 +17,9 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "json-server": "^0.12.2",
+    "socket.io": "^2.1.1",
+    "socket.io-client": "^2.1.1",
     "wrld.js": "^0.1.1528"
   },
   "devDependencies": {
