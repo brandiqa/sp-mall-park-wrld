@@ -6,7 +6,8 @@
   "scripts": {
     "json": "json-server --watch data/db.json",
     "start": "parcel src/index.html",
-    "parking": "parcel src/parking.html"
+    "parking": "parcel src/parking.html",
+    "server": "node server"
   },
   "keywords": [],
   "author": "Michael Wanyoike",
