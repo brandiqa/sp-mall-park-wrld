@@ -15,18 +15,6 @@ body {
   height: 100%;
   background-color: #000000;
 }
-/* -------- FLOOR CONTROLS -------- */
-
- #floorButtons {
-  position: absolute;
-  right: 5px;
-  z-index: 20;
-}
-
-#floorButtons button {
-  display: block;
-  width: 100%;
-}
 
 /* -------- POPUP CONTENT -------- */
 
