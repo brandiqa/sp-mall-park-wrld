@@ -30,9 +30,10 @@ module.exports = {
     }
     return {};
   },
-  getParkingAreas: async () => {
+  getParkingAreas: async (id) => {
     try {
-      const response = await client.get('/parkingAreas');
+      const url = id ? `/parkingAreas/${id}` : '/parkingAreas';
+      const response = await client.get(url);
       return response.data;
     } catch (error) {
       if (message) {

@@ -25,25 +25,23 @@ const getColorCode = (parkingArea) => {
   return availableColor;
 };
 
-const updateParkingAreas = async () => {
-  const parkingAreas = await getParkingAreas();
-  parkingAreas.forEach((parkingArea) => {
+const updateParkingArea = async ({ id }) => {
+  const parkingArea = await getParkingAreas(id);
+  if (parkingArea) {
     const parkPoly = parkPolys.find(target => parkingArea.id === target.id);
     if (parkPoly) {
       parkPoly.poly.setColor(getColorCode(parkingArea));
     }
-  });
-  // Repeat every 5 seconds
-  // setTimeout(updateParkingAreas, updateCycle);
+  }
 };
 
 const socket = io.connect('http://localhost:3001');
 
 socket.on('connect', () => {
   console.log('connected to socket 3001');
-  socket.on('parkingAreas', () => {
+  socket.on('parkingAreas', (data) => {
     console.log('parkingAreas event received');
-    updateParkingAreas();
+    updateParkingArea(data);
   });
 });
 
@@ -62,7 +60,5 @@ window.addEventListener('load', async () => {
         .addTo(map);
       parkPolys.push({ id: parkingArea.id, poly });
     });
-
-    updateParkingAreas();
   });
 });
