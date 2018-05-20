@@ -16,7 +16,6 @@ window.addEventListener('load', async () => {
     indoorsEnabled: true,
   });
 
-
   const indoorControl = new WrldIndoorControl('widget-container', map); // eslint-disable-line no-unused-vars
 
   map.on('initialstreamingcomplete', () => {
@@ -41,7 +40,7 @@ window.addEventListener('load', async () => {
     if (event.indoorMap.getIndoorMapId() === indoorMapId) {
       map.indoors.setFloor(0);
       map.setView([56.459342, -2.9741433], 18);
-
+      // Display POI markers
       const pois = await getPOIs();
       placeMarkers(pois);
     }

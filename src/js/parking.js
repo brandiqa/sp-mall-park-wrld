@@ -8,7 +8,6 @@ const keys = {
 };
 
 const parkPolys = [];
-// const updateCycle = 5000; // 5 seconds
 
 // Color Codes
 const fullColor = [255, 0, 0, 128]; // Completely full, 100%
